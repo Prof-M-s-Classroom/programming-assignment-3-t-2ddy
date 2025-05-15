@@ -27,15 +27,14 @@ Run directly from the IDE.
 | Insert in MinHeap    |     O(log N)      |
 | Extract Min          |     O(log N)      |
 | Decrease Key         |     O(log N)      |
-| Prim’s MST Overall   |     O(N log N)     |
+| Prim’s MST Overall   |     O(ElogV)    |
 
 _Explain why your MST implementation has the above runtime._
 
 Insert in MinHeap: The steps are as follows: inset new element at the end of the heap; compare with parent by bubbling and swapping if nessecary; where worst case is from leaf to root making this operation O(log N).
 Extract Min: The steps are as follows: remove the root; replace the root position with the last element in the heap; then we bubble down from the root; where the worst case is root to leaf making this operation O(log N).
 Decrease Key: The steps are as follows: decrease the key value for a specific vertex; bubble up; where the worst case is from current position to root making this operation O(log N).
-Prim’s MST Overall: For the over all run time complexity, the main loop total extractions take O(log N) time, the neighbor updates for each neighbor where the worst case of each deacrease key operation is O(N) and each decrease key is O(log N) making this O(N log N).
-## Test Case Description
+Prim’s MST Overall: For the over all run time complexity we get O(E log V), where E is impacted by our edges and V is impacted by our nodes or vertices and how we are processing them. Worst case, we hit up to O(E) traversing through all edges and for O(log V), which , we get that from insertions and/or insertions. All together, worst case can be interpreted as doing up to O(E) operations, each operation including an O(log V) step.
 
 Input:
 
